@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/home','ViewsController@viewHome');
+Route::get('/','ViewsController@viewHome')->name('inicio');
+Route::get('/crear','ViewsController@crearT')->name('crearT');
+Route::post('/new','ViewsController@nuevaT')->name('new');
+Route::get('/edit/{id}/','ViewsController@editarT')->name('editar');
+Route::post('/update/{id}','ViewsController@actualizarT')->name('actualizar');
+Route::delete('/delete/{id}','ViewsController@eliminarT')->name('eliminar');
+

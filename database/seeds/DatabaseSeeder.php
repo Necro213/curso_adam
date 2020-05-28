@@ -11,6 +11,67 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        DB::table('tareas')->insert([
+            'nombre' => 't1',
+            'descripcion' => 'awiwi',
+            'numero' => 1234,
+            'estado' => 1,
+        ]);
+
+        DB::table('tareas')->insert([
+            'nombre' => 't2',
+            'descripcion' => 'awiwi',
+            'numero' => 1234,
+            'estado' => 1,
+        ]);
+        DB::table('tareas')->insert([
+            'nombre' => 't3',
+            'descripcion' => 'awiwi',
+            'numero' => 1234,
+            'estado' => 1,
+        ]);
+        DB::table('tareas')->insert([
+            'nombre' => 't4',
+            'descripcion' => 'awiwi',
+            'numero' => 1234,
+            'estado' => 1,
+        ]);
+        DB::table('tareas')->insert([
+            'nombre' => 't5',
+            'descripcion' => 'awiwi',
+            'numero' => 1234,
+            'estado' => 1,
+        ]);
+        DB::table('tareas')->insert([
+            'nombre' => 't6',
+            'descripcion' => 'awiwi',
+            'numero' => 1234,
+            'estado' => 1,
+        ]);
+
+        DB::table('tareas')->insert([
+            'nombre' => 't7',
+            'descripcion' => 'awiwi',
+            'numero' => 1234,
+            'estado' => 1,
+        ]);
+        DB::table('tareas')->insert([
+            'nombre' => 't8',
+            'descripcion' => 'awiwi',
+            'numero' => 1234,
+            'estado' => 1,
+        ]);
+        DB::table('tareas')->insert([
+            'nombre' => 't9',
+            'descripcion' => 'awiwi',
+            'numero' => 1234,
+            'estado' => 1,
+        ]);
+        DB::table('tareas')->insert([
+            'nombre' => 't10',
+            'descripcion' => 'awiwi',
+            'numero' => 1234,
+            'estado' => 1,
+        ]);
     }
 }

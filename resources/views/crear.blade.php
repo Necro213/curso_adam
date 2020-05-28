@@ -3,7 +3,7 @@
 
 @section('navbar')
 
-    <form class="form-group" method="POST" action="/new" enctype="multipart/form-data">
+    <form class="form-group formalizar" method="POST" action="/new" enctype="multipart/form-data">
         @csrf
         <div>
             <label for="">Nombre</label>
@@ -30,6 +30,7 @@
         </div>
     </form>
 
+    <script src="{{asset('css/forms.css')}}"></script>
 
 
 @endsection

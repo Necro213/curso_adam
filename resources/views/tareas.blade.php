@@ -5,7 +5,7 @@
 
     <h2>Tareas</h2>
 
-    <h3>Tabla con for each</h3>
+
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
@@ -26,7 +26,7 @@
                         <td>{{$tarea->descripcion}}</td>
                         <td>{{$tarea->numero}}</td>
                         <td>
-                           @if ($tarea->estado == 1)
+                           @if ($tarea->estado == 0)
                                <label>Terminado</label>
 
                             @else
@@ -37,7 +37,7 @@
                             <ul class="list-inline m-0">
                                 <li class="list-inline-item">
                                     <a class="btn btn-success"  href="{{route('editar',['id'=>$tarea->id])}}">
-                                        Editar
+                                        Edit
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
@@ -45,7 +45,7 @@
                                         {{csrf_field()}}
                                         {{method_field('DELETE')}}
                                         <div class="form-group">
-                                            <input type="submit" class="btn btn-danger" value="Eliminar">
+                                            <input type="submit" class="btn btn-danger" value="X">
                                         </div>
 
                                     </form>

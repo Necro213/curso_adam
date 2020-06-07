@@ -1,7 +1,7 @@
-@extends('layouts.navbar')
+@extends('layouts.layout')
 
 
-@section('navbar')
+@section('content')
 
     <form class="form-group formalizar" method="POST" action="/new" enctype="multipart/form-data">
         @csrf
@@ -29,8 +29,8 @@
             <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
     </form>
+@endsection
 
+@section("scripts")
     <script src="{{asset('css/forms.css')}}"></script>
-
-
 @endsection

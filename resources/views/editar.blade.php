@@ -1,10 +1,10 @@
-@extends('layouts.navbar')
+@extends('layouts.layout')
 
 
-@section('navbar')
+@section('content')
 
 
-        <form class="form-group formalizar" method="POST" action="/update/{{$tarea->id}}" enctype="multipart/form-data">
+        <form class="form-group formalizar" method="POST" action="{{route("actualizar",["id"=>$tarea->id])}}" enctype="multipart/form-data">
             @csrf
 
             <div>
@@ -28,12 +28,14 @@
             </div>
             <div class="modal-footer">
                 <a  class="btn btn-warning" href="/">Regresar</a>
-                <button type="submit"  class="btn btn-success"  data->Guardar</button>
+                <button type="submit"  class="btn btn-success" >Guardar</button>
             </div>
         </form>
   
 
+
+
+    @endsection
+@section('scripts')
     <script src="{{asset('css/forms.css')}}"></script>
-
-
     @endsection

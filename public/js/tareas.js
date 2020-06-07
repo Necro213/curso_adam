@@ -1,4 +1,5 @@
 $(function(){
+    $('#tareas').DataTable();
     getTareas();
 });
 
@@ -42,6 +43,10 @@ function generaItem(nombre,descripcion,numero,estado) {
         '</a>';
 
     return item;
+}
+
+function edit() {
+
 }
 
 

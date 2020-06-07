@@ -21,3 +21,4 @@ Route::get('/edit/{id}/','ViewsController@editarT')->name('editar');
 Route::post('/update/{id}','ViewsController@actualizarT')->name('actualizar');
 Route::delete('/delete/{id}','ViewsController@eliminarT')->name('eliminar');
 
+Route::get('/tareas','ViewsController@viewTareas')->name('inicio');

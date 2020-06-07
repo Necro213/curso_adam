@@ -15,6 +15,15 @@ class ViewsController extends Controller
      //   return view('tareas', compact('tareas'));
         return view('tareas',["tareas"=>$tareas]);
     }
+
+
+    function viewTareas(){
+        $tareas = Tareas::all();
+
+        //   return view('tareas', compact('tareas'));
+        return view('tareas',["tareas"=>$tareas]);
+    }
+
     function crearT(){
     return view('crear');
     }
@@ -39,7 +48,7 @@ class ViewsController extends Controller
     }
 
     function actualizarT(Request $request,$id){
-        $tareas = Tareas::find($id)->first();
+        $tareas = Tareas::find($id);
         $tareas->nombre=$request->nombre;
         $tareas->descripcion=$request->descripcion;
         $tareas->numero=$request->numero;
@@ -54,7 +63,7 @@ class ViewsController extends Controller
 
     function eliminarT($id){
 
-        Tareas::find($id)->delete();
+        Tareas::destroy($id);
        // return 'Eliminado';
         return redirect()->route('inicio')->with('status','tarea editada exitosamente');
     }

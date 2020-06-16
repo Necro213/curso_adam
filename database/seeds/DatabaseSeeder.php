@@ -73,5 +73,12 @@ class DatabaseSeeder extends Seeder
             'numero' => 1234,
             'estado' => 1,
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'adam',
+            'email' => 'ad.river@hotmail.com',
+            'password' => 1234,
+
+        ]);
     }
 }

@@ -28,44 +28,7 @@
                     <th>Acciones</th>
                 </tr>
                 </thead>
-                @foreach($tareas as $tarea)
-                    <tbody>
-                    <tr>
-                        <td>{{$tarea->nombre}}</td>
-                        <td>{{$tarea->descripcion}}</td>
-                        <td>{{$tarea->numero}}</td>
-                        <td>
-                            @if ($tarea->estado == 0)
-                                <label>Terminado</label>
 
-                            @else
-                                <label>Pendiente</label>
-                            @endif
-                        </td>
-                        <td>
-                            <ul class="list-inline m-0">
-                                <li class="list-inline-item">
-                                    <a class="btn btn-success"  href="{{route('editar',['id'=>$tarea->id])}}">
-                                        E
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <form class="form-group " method="POST" action="/delete/{{$tarea->id}}">
-                                        {{csrf_field()}}
-                                        {{method_field('DELETE')}}
-                                        <div class="form-group">
-                                            <input type="submit" class="btn btn-danger" value="X">
-                                        </div>
-
-                                    </form>
-                                </li>
-                            </ul>
-                        </td>
-
-                    </tr>
-
-                    @endforeach
-                    </tbody>
                     <tfoot>
                     <a  class="btn btn-primary"  href="/crear">
                         Nuevo registro
@@ -79,4 +42,24 @@
 
 @section("scripts")
     <script src="{{asset("js/tareas.js")}}"></script>
+    <script>
+        $(document).ready(function () {
+            $('#tareas').DataTable({
+                processing: true,
+                serverSide:true,
+                ajax: {
+                    url: 'api/tareas'
+                },
+                dataFilter: function(data){
+                    var json = jQuery.parseJSON( data );
+                    json.recordsTotal = json.total;
+                    json.recordsFiltered = json.total;
+                    json.data = json.list;
+
+                    return JSON.stringify( json ); // return JSON string
+
+                }
+            })
+        });
+    </script>
 @endsection

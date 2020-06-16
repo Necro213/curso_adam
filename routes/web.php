@@ -22,3 +22,13 @@ Route::post('/update/{id}','ViewsController@actualizarT')->name('actualizar');
 Route::delete('/delete/{id}','ViewsController@eliminarT')->name('eliminar');
 
 Route::get('/tareas','ViewsController@viewTareas')->name('inicio');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+/*
+ seccion perfil
+ */
+
+Route::get('/perfil','PerfilController@viewHome')->name('perfil');

@@ -7,9 +7,13 @@ use Illuminate\Http\Request;
 
 class PerfilController extends Controller
 {
-    function viewHome(){
+    function viewHome($id){
 
-        //   return view('tareas', compact('tareas'));
-        return view('perfil');
+        $info_user = info_user::find($id);
+
+        return view('perfil',['info_user'=>$info_user]);
     }
+
+
+
 }
